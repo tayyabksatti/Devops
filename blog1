@@ -1,0 +1,41 @@
+How to extract text from PDF on the basis of font size using python libraries.
+The text written on PDF having different font size because PDF contain headings, sub-headings, text and title so every font has different size and every word of pdf is important. so extract text from PDF is very simple in python using fitz, PyPDF2, pdfrw, pdfminer, pdfreader. all the libraries fetch the text data.
+so if we need to extract text of pdf on the basis of font size so we can use pdfminer and fitz .
+By using pdfminer we use this lines of code to extract text on the basis of font size .
+from pdfminer.high_level import extract_pages
+from pdfminer.layout import LTTextContainer, LTChar,LTLine,LAParams
+import os
+path=r'/path/to/pdf'
+
+Extract_Data=[]
+
+for page_layout in extract_pages(path):
+   for element in page_layout:
+       if isinstance(element, LTTextContainer):
+           for text_line in element:
+               for character in text_line:
+                   if isinstance(character, LTChar):
+                       Font_size=character.size
+           Extract_Data.append([Font_size,(element.get_text())])
+By using fitz we use this lines of code to extract text on the basis of font size .
+import fitz
+
+def scrape(keyword, filePath):
+   results = [] # list of tuples that store the information as (text, font size, font name)
+   pdf = fitz.open(filePath) # filePath is a string that contains the path to the pdf
+   for page in pdf:
+       dict = page.get_text("dict")
+       blocks = dict["blocks"]
+       for block in blocks:
+           if "lines" in block.keys():
+               spans = block['lines']
+               for span in spans:
+                   data = span['spans']
+                   for lines in data:
+                       if keyword in lines['text'].lower(): # only store font information of a specific keyword
+                           results.append((lines['text'], lines['size'], lines['font']))
+                           # lines['text'] -> string, lines['size'] -> font size, lines['font'] -> font name
+   pdf.close()
+   return results
+If we compare both libraries then a better way to do this would be to use fitz itself. This library is significantly faster and cleaner in scraping the font information as compared to pdfminer. fitz can extract text from any type of pdf that contains images ,table, and text. but pdfminer work well on simple pdf that contain only text. if pdf have images or table then it warning that Lt char is not iterate able.
+
