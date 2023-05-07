@@ -1,0 +1,42 @@
+Kubernetes
+
+Kubernetes, also known as K8s, is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. Developed by Google, Kubernetes has become the de facto standard for deploying and managing containerized applications, thanks to its ability to provide a reliable, scalable, and efficient platform for container orchestration.
+
+
+Kubernetes is built around the concept of containers, which are lightweight, standalone executable packages that can run applications and services. Containers enable developers to package applications along with their dependencies, making it easy to deploy and run them across different environments.
+
+Architecture: VMs emulate a physical machine, while containers share the same kernel as the host machine. Resource Usage: VMs require more resources than containers since each VM has its own operating system. Portability: Containers are highly portable and can be run on any machine that supports the container runtime. Isolation: VMs provide a high level of isolation between applications, while containers share the same kernel as the host machine. Management: Kubernetes provides a powerful pl
+Architecture: VMs emulate a physical machine, while containers share the same kernel as the host machine.
+But while containers are great for running individual applications, managing multiple containers across different environments can quickly become complex and time-consuming. This is where Kubernetes comes in — it provides a powerful platform for managing containerized applications at scale.
+
+At its core, Kubernetes is a system for automating the deployment, scaling, and management of containerized applications. It achieves this through a combination of several key features:
+
+1. Container Orchestration: Kubernetes allows you to deploy and manage containers across multiple hosts, ensuring that your applications are always available and running smoothly.
+
+2. Service Discovery: Kubernetes provides a built-in service discovery mechanism, allowing containers to find and communicate with each other automatically.
+
+3. Load Balancing: Kubernetes can automatically distribute network traffic to containers, ensuring that your applications are always responsive and available.
+
+4. Storage Orchestration: Kubernetes allows you to manage storage volumes for your containers, ensuring that your data is always available and backed up.
+
+5. Self-Healing: Kubernetes can automatically detect and recover from container failures, ensuring that your applications are always running smoothly.
+
+5. Scalability: Kubernetes can automatically scale your applications up or down based on demand, ensuring that your applications are always responsive and cost-effective.
+
+6. Rolling Deployments: Kubernetes allows you to perform rolling deployments, allowing you to update your applications without downtime.
+
+Kubernetes is designed to work with a wide range of container runtimes, including Docker, CRI-O, and containerd. This makes it easy to deploy and manage containerized applications across different environments, including on-premise data centers, public clouds, and hybrid clouds.
+
+
+Kubernetes is also highly extensible, with a large and growing ecosystem of plugins and add-ons that can be used to extend its functionality. This includes plugins for monitoring, logging, and security, as well as plugins for integrating with other systems and services.
+
+How to set up a Kubernetes cluster ?
+
+
+To get started with Kubernetes, you will need to set up a Kubernetes cluster. A Kubernetes cluster consists of one or more master nodes and one or more worker nodes. The master nodes are responsible for managing the cluster, while the worker nodes are responsible for running the containers.
+
+Once you have set up your Kubernetes cluster, you can start deploying and managing your containerized applications using Kubernetes commands and tools, such as kubectl and Helm.
+
+
+In conclusion, Kubernetes is a powerful platform for deploying and managing containerized applications at scale. It provides a wide range of features for container orchestration, service discovery, load balancing, storage orchestration, self-healing, scalability, and rolling deployments. With its large and growing ecosystem of plugins and add-ons, Kubernetes is the de facto standard for container orchestration and a must-know technology for anyone working with containers.
+
