@@ -1,0 +1,70 @@
+Basic kubectl and Helm commands for beginners
+
+Kubernetes has become one of the most popular container orchestration tools in recent years. With its ability to automate deployment, scaling, and management of containerized applications, Kubernetes has become a go-to platform for developers and DevOps engineers. Two important tools for working with Kubernetes are kubectl and Helm.
+
+In this blog post, we will cover the basic kubectl and Helm commands that every beginner should know.
+
+Kubectl
+kubectl is a command-line tool that allows you to interact with Kubernetes clusters. You can use kubectl to deploy, manage, and troubleshoot Kubernetes resources. Here are some of the basic kubectl commands:
+
+Get
+The get command is used to retrieve information about Kubernetes resources. Here's how you can use get to retrieve information about pods:
+
+kubectl get pods
+This command will display a list of all pods in the current namespace.
+
+Describe
+The describe command provides more detailed information about a Kubernetes resource. Here's how you can use describe to get more information about a pod:
+
+kubectl describe pod <pod-name>
+Replace <pod-name> with the name of the pod you want to describe.
+
+Create
+The create command is used to create Kubernetes resources. Here's an example of how you can use create to create a deployment:
+
+luakubectl create deployment nginx --image=nginx
+This command will create a deployment named nginx using the nginx Docker image.
+
+Apply
+The apply command is used to apply configuration changes to Kubernetes resources. Here's an example of how you can use apply to update a deployment:
+
+kubectl apply -f deployment.yam
+This command will apply the changes defined in the deployment.yaml file to the deployment.
+
+Delete
+The delete command is used to delete Kubernetes resources. Here's an example of how you can use delete to delete a pod:
+
+kubectl delete pod <pod-name>
+Replace <pod-name> with the name of the pod you want to delete.
+
+Helm
+Helm is a package manager for Kubernetes that allows you to define, install, and upgrade complex Kubernetes applications. Helm uses a packaging format called charts, which contain all the resources necessary to run an application on Kubernetes. Here are some of the basic Helm commands:
+
+Install
+The install command is used to install a chart. Here's an example of how you can use install to install the stable/nginx-ingress chart:
+
+helm install nginx-ingress stable/nginx-ingress
+This command will install the stable/nginx-ingress chart using the release name nginx-ingress.
+
+Upgrade
+The upgrade command is used to upgrade a release to a new version of a chart. Here's an example of how you can use upgrade to upgrade the nginx-ingress release to version 1.2.3:
+
+helm upgrade nginx-ingress stable/nginx-ingress --version 1.2.3
+This command will upgrade the nginx-ingress release to version 1.2.3.
+
+Uninstall
+The uninstall command is used to uninstall a release. Here's an example of how you can use uninstall to uninstall the nginx-ingress release:
+
+helm uninstall nginx-ingress
+This command will uninstall the nginx-ingress release.
+
+Here is one of the basic helm and kubectl basic command snapshot
+
+
+Conclusion
+In this blog post, we covered some of the basic kubectl and Helm commands that every beginner should know. These commands are just the tip of the iceberg, but they should provide you with a good starting point for working with Kubernetes. As you gain more experience, you will learn more advanced commands and techniques for working with Kubernetes
+
+
+
+
+
